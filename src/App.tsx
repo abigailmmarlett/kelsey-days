@@ -7,19 +7,22 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="bg-blue-500 text-white p-4 m-4 rounded-lg hover:bg-blue-600 transition-colors">
+        If this is blue with white text and hovers darker, Tailwind is working!
+      </div>
       <div className="flex gap-8 mb-8">
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img 
-            src={viteLogo} 
-            className="h-24 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#646cffaa]" 
-            alt="Vite logo" 
+          <img
+            src={viteLogo}
+            className="h-24 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#646cffaa]"
+            alt="Vite logo"
           />
         </a>
         <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img 
-            src={reactLogo} 
-            className="h-24 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] animate-spin-slow" 
-            alt="React logo" 
+          <img
+            src={reactLogo}
+            className="h-24 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] animate-spin-slow"
+            alt="React logo"
           />
         </a>
       </div>
@@ -27,7 +30,7 @@ function App() {
         Vite + React
       </h1>
       <div className="p-8">
-        <button 
+        <button
           onClick={() => setCount((count) => count + 1)}
           className="px-6 py-3 bg-gray-800 dark:bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
