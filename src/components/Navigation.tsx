@@ -9,7 +9,6 @@ export default function Navigation() {
       links: [
         { label: 'Home', href: '#home' },
         { label: 'Books', href: '#books' },
-        { label: 'About', href: '#about' },
       ],
     },
     {
