@@ -8,7 +8,7 @@ export default function HeroSection({ scrollY, backgroundImage, headshot }: Hero
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative h-auto md:min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden py-16 md:py-20"
     >
       {/* Parallax Background Image Container */}
       <div
@@ -18,29 +18,43 @@ export default function HeroSection({ scrollY, backgroundImage, headshot }: Hero
           backgroundSize: 'cover',
           backgroundPosition: `center ${scrollY * 0.5}px`,
           backgroundRepeat: 'no-repeat',
-          filter: 'brightness(1.1) opacity(0.4)',
+          filter: 'brightness(1.1) opacity(0.15)',
         }}
       >
         {/* Background Image Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-light/50 via-neutral-light/40 to-neutral-light/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-light/60 via-neutral-light/50 to-neutral-light/60"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto w-full animate-fadeInUp">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto w-full animate-fadeInUp">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Text Content */}
-          <div className="text-center md:text-left order-2 md:order-1">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
-              Kelsey Day
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-700 mb-12 leading-relaxed font-light">
-              Poet & Author bridging mountain roots with metropolitan narratives. A queer Appalachian voice exploring the delicate threads that connect us to place, memory, and each other.
+          <div className="text-center md:text-left order-2 md:order-1 space-y-8">
+            <div>
+              {/* Decorative top line */}
+              <div className="hidden md:block mb-6">
+                <div className="h-0.5 w-12 bg-gradient-to-r from-gray-400 to-transparent"></div>
+              </div>
+
+              <h1 className="text-6xl sm:text-7xl md:text-8xl text-gray-900 mb-4 leading-tight" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: '-0.02em' }}>
+                Kelsey Day
+              </h1>
+
+              {/* Decorative subtitle line */}
+              <p className="text-sm md:text-base text-gray-600 tracking-widest uppercase font-light" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                Poet & Author
+              </p>
+            </div>
+
+            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.15rem', fontWeight: 300 }}>
+              Kelsey Day is a writer from southern Appalachia. Their work is urgent, evocative, and relentlessly vulnerable, and has been published in literary journals such as The Atlantic, Orion Magazine, Aeon, Freeman's, The Appalachian Review, The Washington Square Review, The Foundationalist, Brave Voices, and Our Shared Memory Collective. They are a recipient of the University of Chicago's Young Memory Fellowship and the International Women's Writing Guild Fellowship, as well as a grant recipient of the Boston Art Opportunity Fund. Their debut young adult novel, The Spiral Key, is forthcoming from Viking, Penguin Random House, in 2026.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button className="px-8 py-3 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors duration-300 font-light tracking-wide hover:shadow-lg">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+              <button className="px-8 py-3 bg-gray-900 text-white rounded-sm hover:bg-gray-800 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-xl hover:-translate-y-0.5">
                 Explore Work
               </button>
-              <button className="px-8 py-3 bg-white text-gray-900 border border-gray-300 rounded hover:bg-gray-50 transition-colors duration-300 font-light tracking-wide hover:shadow-lg">
+              <button className="px-8 py-3 bg-white text-gray-900 border border-gray-400 rounded-sm hover:border-gray-900 hover:bg-gray-50 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-lg hover:-translate-y-0.5">
                 About Me
               </button>
             </div>
@@ -48,23 +62,22 @@ export default function HeroSection({ scrollY, backgroundImage, headshot }: Hero
 
           {/* Headshot Image */}
           <div className="order-1 md:order-2 flex justify-center md:justify-end px-4">
-            <div className="relative w-full max-w-xs md:max-w-md">
-              {/* Decorative background circle */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-amber-200/30 to-transparent rounded-full blur-3xl"></div>
+            <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
+              {/* Artistic background elements */}
+              <div className="absolute -inset-12 bg-gradient-to-br from-amber-100/20 via-transparent to-gray-200/10 rounded-3xl blur-2xl"></div>
 
-              {/* Image container with frame effect */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-white p-1">
+              {/* Frame with artistic border */}
+              <div className="relative rounded-sm overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 hover:scale-102 bg-white border border-gray-200">
                 <img
                   src={headshot}
                   alt="Kelsey Day"
-                  className="w-full h-auto object-cover rounded-xl"
+                  className="w-full h-auto object-cover"
                 />
-                {/* Subtle border */}
-                <div className="absolute inset-0 rounded-xl border border-gray-200 pointer-events-none"></div>
               </div>
 
-              {/* Accent line */}
-              <div className="absolute -bottom-6 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gray-400 to-transparent mx-auto w-3/4"></div>
+              {/* Artistic accent elements */}
+              <div className="absolute -bottom-8 -left-6 w-24 h-24 border border-gray-300 rounded-sm opacity-30"></div>
+              <div className="absolute -top-8 -right-6 w-16 h-16 border border-gray-300 rounded-sm opacity-30"></div>
             </div>
           </div>
         </div>
