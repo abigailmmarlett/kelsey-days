@@ -49,7 +49,7 @@ export default function BookReleaseSection({ bookData }: BookReleaseSectionProps
 
             {/* Quote */}
             <blockquote className="border-l-2 border-gray-400 pl-6 py-4">
-              <p className="text-lg text-gray-700 italic font-light leading-relaxed">
+              <p className="text-gray-700 italic whitespace-pre-line">
                 {bookData.quote}
               </p>
             </blockquote>
@@ -65,9 +65,8 @@ export default function BookReleaseSection({ bookData }: BookReleaseSectionProps
               >
                 <span>Read More</span>
                 <svg
-                  className={`w-4 h-4 transition-transform duration-300 group-hover:translate-y-1 ${
-                    isExpanded ? 'rotate-180' : ''
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-300 group-hover:translate-y-1 ${isExpanded ? 'rotate-180' : ''
+                    }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
