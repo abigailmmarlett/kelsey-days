@@ -97,7 +97,7 @@ export default function RecognitionSection() {
           <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4 tracking-tight">
             Awards & Recognition
           </h2>
-          <div className="h-1 w-12 bg-gray-400 mx-auto"></div>
+          <div className="h-1 w-12 bg-gradient-to-r from-rose-600 to-rose-400 mx-auto"></div>
           <p className="text-gray-600 font-light text-lg mt-6">
             Celebrating artistic achievement and literary impact
           </p>
@@ -108,19 +108,21 @@ export default function RecognitionSection() {
           {visibleAwards.map((award, index) => (
             <div
               key={index}
-              className="group p-6 bg-white rounded-lg border border-gray-200 hover:border-gray-900 hover:shadow-lg transition-all duration-300 animate-floatIn"
+              className="group relative p-8 bg-white rounded-lg border border-gray-200 hover:border-gray-900 hover:shadow-xl transition-all duration-300 animate-floatIn overflow-hidden"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 text-gray-700 group-hover:text-gray-900 group-hover:scale-110 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-b from-gray-900/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="flex-shrink-0 text-gray-400 group-hover:text-gray-900 group-hover:scale-125 transition-all duration-300">
                   {award.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight mb-2 group-hover:text-gray-700 transition-colors">
+                  <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight mb-3 group-hover:text-gray-700 transition-colors">
                     {award.title}
                   </h3>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-light uppercase tracking-widest rounded-full">
+                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-light uppercase tracking-widest rounded-full group-hover:bg-gray-900 group-hover:text-white transition-all duration-300">
                       {award.category}
                     </span>
                   </div>

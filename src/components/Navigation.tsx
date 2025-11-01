@@ -3,49 +3,71 @@ import React, { useState } from 'react';
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Latest Book', href: '#book-release' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#newsletter' },
+  const navSections = [
+    {
+      title: 'Explore',
+      links: [
+        { label: 'Home', href: '#home' },
+        { label: 'Books', href: '#books' },
+        { label: 'About', href: '#about' },
+      ],
+    },
+    {
+      title: 'Events',
+      links: [
+        { label: 'Tour Dates', href: '#tour-dates' },
+      ],
+    },
+    {
+      title: 'Connect',
+      links: [
+        { label: 'Contact', href: '#newsletter' },
+      ],
+    },
   ];
 
   return (
     <nav className="bg-white sticky top-0 z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-center items-center h-16 relative">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="absolute left-0 flex-shrink-0">
             <a href="#home" className="text-xl font-light text-gray-900 tracking-tight">
               Kelsey Day
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-12">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-light text-sm tracking-wide group"
-              >
-                {link.label}
-                <span className="block h-0.5 bg-gray-900 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </a>
-            ))}
-          </div>
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex flex-1 items-center justify-center">
+            <div className="flex items-center gap-0">
+              {navSections.map((section) =>
+                section.links.map((link, linkIdx, allLinks) => {
+                  const allNavLinks = navSections.flatMap(s => s.links);
+                  const currentLinkIdx = allNavLinks.findIndex(l => l.label === link.label);
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <button className="px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors font-light tracking-wide text-sm hover:shadow-lg">
-              Get Started
-            </button>
+                  return (
+                    <div key={link.label} className="flex items-center gap-0">
+                      <a
+                        href={link.href}
+                        className="px-6 py-2 text-gray-700 hover:text-gray-900 transition-colors font-light text-sm tracking-wide group whitespace-nowrap"
+                      >
+                        {link.label}
+                        <span className="block h-0.5 bg-gray-900 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                      </a>
+                      {currentLinkIdx !== allNavLinks.length - 1 && (
+                        <div className="w-px h-4 bg-gray-300"></div>
+                      )}
+                    </div>
+                  );
+                })
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            className="absolute right-0 md:hidden inline-flex items-center justify-center p-2 rounded text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
           >
             <svg
               className="h-6 w-6"
@@ -66,18 +88,25 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden pb-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded transition-colors font-light"
-              >
-                {link.label}
-              </a>
+            {navSections.map((section) => (
+              <div key={section.title} className="px-3 py-4">
+                <p className="text-xs uppercase text-gray-500 font-light tracking-widest mb-2">
+                  {section.title}
+                </p>
+                <div className="space-y-1">
+                  {section.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-2 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded transition-colors font-light"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             ))}
-            <button className="w-full mt-4 px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors font-light">
-              Get Started
-            </button>
           </div>
         )}
       </div>

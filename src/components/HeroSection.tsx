@@ -51,12 +51,18 @@ export default function HeroSection({ scrollY, backgroundImage, headshot }: Hero
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-              <button className="px-8 py-3 bg-gray-900 text-white rounded-sm hover:bg-gray-800 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-xl hover:-translate-y-0.5">
+              <a
+                href="#books"
+                className="px-8 py-3 bg-gray-900 text-white rounded-sm hover:bg-gray-800 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-xl hover:-translate-y-0.5 text-center"
+              >
                 Explore Work
-              </button>
-              <button className="px-8 py-3 bg-white text-gray-900 border border-gray-400 rounded-sm hover:border-gray-900 hover:bg-gray-50 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-lg hover:-translate-y-0.5">
-                About Me
-              </button>
+              </a>
+              <a
+                href="#newsletter"
+                className="px-8 py-3 bg-white text-gray-900 border border-gray-400 rounded-sm hover:border-gray-900 hover:bg-gray-50 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-lg hover:-translate-y-0.5 text-center"
+              >
+                Contact Me
+              </a>
             </div>
           </div>
 
