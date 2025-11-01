@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import spiralKeyCover from '../assets/spiral-key-cover.jpeg';
 import blueridgeMountains from '../assets/mountains.webp';
 import kelseyHeadshot from '../assets/kelsey-flowers.jpg';
+import PublicationsSection from '../components/PublicationsSection';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -39,6 +40,7 @@ export default function Home() {
       <BookReleaseSection bookData={bookData} />
       <AboutSection />
       <RecognitionSection />
+      <PublicationsSection />
       <NewsletterSection />
       <Footer />
     </div>
