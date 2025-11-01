@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
 import BookReleaseSection from '../components/BookReleaseSection';
 import AboutSection from '../components/AboutSection';
-import AchievementsSection from '../components/AchievementsSection';
+import RecognitionSection from '../components/RecognitionSection';
 import NewsletterSection from '../components/NewsletterSection';
 import Footer from '../components/Footer';
 import spiralKeyCover from '../assets/spiral-key-cover.jpeg';
-import blueridgeMountains from '../assets/mountains.webp';
-import kelseyHeadshot from '../assets/kelsey-flowers.jpg';
+import blueridgeMountains from '../assets/blueridge-mountains.jpg';
+import kelseyHeadshot from '../assets/kelsey-headshot.png';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -29,29 +29,6 @@ export default function Home() {
     releaseDate: 'Available for Pre-Order',
   };
 
-  const achievements = [
-    {
-      title: 'Poet & Author',
-      description: 'Queer Appalachian writer exploring identity, place, and belonging through fiction and poetry.',
-      icon: '📖',
-    },
-    {
-      title: 'Published Voice',
-      description: 'Work featured in The Atlantic, Orion Magazine, Freeman\'s and other prestigious publications.',
-      icon: '✍️',
-    },
-    {
-      title: 'Literary Recognition',
-      description: 'Recipient of fellowships and awards celebrating innovative storytelling and artistic excellence.',
-      icon: '🏆',
-    },
-    {
-      title: 'Community Artist',
-      description: 'Engaged in workshops, readings, and conversations exploring the intersection of art and identity.',
-      icon: '🌿',
-    },
-  ];
-
   return (
     <div className="bg-neutral-light">
       <HeroSection
@@ -61,7 +38,7 @@ export default function Home() {
       />
       <BookReleaseSection bookData={bookData} />
       <AboutSection />
-      <AchievementsSection achievements={achievements} />
+      <RecognitionSection />
       <NewsletterSection />
       <Footer />
     </div>
