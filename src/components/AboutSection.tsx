@@ -1,4 +1,3 @@
-import React from 'react';
 import kelsey from '../assets/kelsey-headshot.png';
 
 export default function AboutSection() {
