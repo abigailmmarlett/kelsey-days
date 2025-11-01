@@ -6,7 +6,7 @@ import AchievementsSection from '../components/AchievementsSection';
 import NewsletterSection from '../components/NewsletterSection';
 import Footer from '../components/Footer';
 import spiralKeyCover from '../assets/spiral-key-cover.jpeg';
-import blueridgeMountains from '../assets/blueridge-mountains.jpg';
+import blueridgeMountains from '../assets/mountains.webp';
 import kelseyHeadshot from '../assets/kelsey-flowers.jpg';
 
 export default function Home() {

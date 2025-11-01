@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface HeroSectionProps {
   scrollY: number;
   backgroundImage: string;
@@ -8,12 +6,12 @@ interface HeroSectionProps {
 
 export default function HeroSection({ scrollY, backgroundImage, headshot }: HeroSectionProps) {
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       {/* Parallax Background Image Container */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -53,7 +51,7 @@ export default function HeroSection({ scrollY, backgroundImage, headshot }: Hero
             <div className="relative w-full max-w-xs md:max-w-md">
               {/* Decorative background circle */}
               <div className="absolute -inset-8 bg-gradient-to-br from-amber-200/30 to-transparent rounded-full blur-3xl"></div>
-              
+
               {/* Image container with frame effect */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-white p-1">
                 <img
