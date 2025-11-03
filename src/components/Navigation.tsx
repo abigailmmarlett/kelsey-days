@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ export default function Navigation() {
     {
       title: 'Connect',
       links: [
-        { label: 'Contact', href: '#newsletter' },
+        { label: 'Contact', href: '#contact' },
       ],
     },
   ];
@@ -42,7 +42,7 @@ export default function Navigation() {
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="flex items-center gap-0">
               {navSections.map((section) =>
-                section.links.map((link, linkIdx, allLinks) => {
+                section.links.map((link) => {
                   const allNavLinks = navSections.flatMap(s => s.links);
                   const currentLinkIdx = allNavLinks.findIndex(l => l.label === link.label);
 
