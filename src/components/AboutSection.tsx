@@ -15,7 +15,7 @@ export default function AboutSection() {
           {/* Text Content - Left */}
           <div className="animate-slideInLeft space-y-6">
             <p className="text-gray-700 leading-relaxed font-light text-lg">
-              Kelsey Day is a writer from southern Appalachia. Their work is urgent, evocative, and relentlessly vulnerable, and has been published in literary journals such as The Atlantic, Orion Magazine, Aeon, Freeman's, The Appalachian Review, The Washington Square Review, The Foundationalist, Brave Voices, and Our Shared Memory Collective. They are a recipient of the University of Chicago's Young Memory Fellowship and the International Women's Writing Guild Fellowship, as well as a grant recipient of the Boston Art Opportunity Fund. Their debut young adult novel, The Spiral Key, is forthcoming from Viking, Penguin Random House, in 2026.
+              Kelsey Day is a writer from southern Appalachia. Their work is urgent, evocative, and relentlessly vulnerable, and has been published in literary journals such as The Atlantic, Orion Magazine, Aeon, Freeman's, The Appalachian Review, The Washington Square Review, The Foundationalist, Brave Voices, and Our Shared Memory Collective. They are a recipient of the University of Chicago's Young Memory Fellowship and the International Women's Writing Guild Fellowship, as well as a grant recipient of the Boston Art Opportunity Fund. Their debut young adult novel, <em>The Spiral Key</em>, is forthcoming from Viking, Penguin Random House, in 2026.
             </p>
           </div>
 

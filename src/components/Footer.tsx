@@ -1,64 +1,103 @@
-import React from 'react';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import { SiSubstack } from 'react-icons/si';
 
 export default function Footer() {
-  const footerLinks = [
-    {
-      title: 'Work',
-      links: [
-        { label: 'Latest Release', href: '#' },
-        { label: 'Publications', href: '#' },
-      ],
-    },
-    {
-      title: 'Connect',
-      links: [
-        { label: 'Twitter', href: '#' },
-        { label: 'Instagram', href: '#' },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { label: 'Blog', href: '#' },
-        { label: 'Events', href: '#' },
-      ],
-    },
-    {
-      title: 'Legal',
-      links: [
-        { label: 'Privacy', href: '#' },
-        { label: 'Terms', href: '#' },
-      ],
-    },
-  ];
-
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-gray-300 py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {footerLinks.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-white font-light text-sm uppercase tracking-widest mb-6">
-                {section.title}
-              </h3>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-gray-200 transition-colors font-light text-sm"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+        {/* Navigation Sections */}
+        <div className="grid grid-cols-3 gap-6 sm:gap-12 mb-16 pb-12 border-b border-gray-800">
+          <div className="text-center">
+            <h3 className="text-white font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6">
+              Work
+            </h3>
+            <ul className="space-y-2 sm:space-y-3">
+              <li>
+                <a
+                  href="#books"
+                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                >
+                  Books
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#publications"
+                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                >
+                  Publications
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-white font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6">
+              Explore
+            </h3>
+            <ul className="space-y-2 sm:space-y-3">
+              <li>
+                <a
+                  href="#tour-dates"
+                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                >
+                  Tour Dates
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#newsletter"
+                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                >
+                  Newsletter
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-white font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6">
+              Follow
+            </h3>
+            <div className="space-y-2 sm:space-y-3 flex flex-col items-center">
+              <a
+                href="https://kelseydays.substack.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-200 transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                title="Substack Newsletter"
+              >
+                <SiSubstack className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">Substack</span>
+              </a>
+              <a
+                href="https://www.instagram.com/kelseydays"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-200 transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                title="Instagram"
+              >
+                <FaInstagram className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">Instagram</span>
+              </a>
+              <a
+                href="https://facebook.com/kelseydaywriting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-200 transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                title="Facebook"
+              >
+                <FaFacebook className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">Facebook</span>
+              </a>
             </div>
-          ))}
+          </div>
         </div>
-        <div className="border-t border-gray-800 pt-8">
-          <p className="text-center text-gray-500 font-light text-sm">
-            © 2024 Kelsey Day. All rights reserved.
+
+        {/* Footer Bottom */}
+        <div className="flex flex-col items-center justify-center gap-6">
+          <p className="text-gray-500 font-light text-xs">
+            © {new Date().getFullYear()} Kelsey Day. All rights reserved.
           </p>
         </div>
       </div>

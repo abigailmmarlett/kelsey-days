@@ -285,7 +285,7 @@ export default function PublicationsSection() {
           <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4 tracking-tight">
             Publications
           </h2>
-          <div className="h-1 w-12 bg-gray-400 mx-auto"></div>
+          <div className="h-1 w-12 bg-gradient-to-r from-emerald-600 to-emerald-400 mx-auto"></div>
           <p className="text-gray-600 font-light text-lg mt-6">
             Featured in prestigious literary journals and anthologies
           </p>
@@ -327,32 +327,38 @@ export default function PublicationsSection() {
               href={pub.link || '#'}
               target={pub.link ? '_blank' : undefined}
               rel={pub.link ? 'noopener noreferrer' : undefined}
-              className={`group block p-6 bg-gray-50 rounded-lg border border-gray-200 hover:border-gray-900 hover:bg-white transition-all duration-300 animate-fadeIn ${
-                !pub.link ? 'cursor-default' : 'hover:shadow-lg'
+              className={`group block relative p-6 bg-white rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 animate-fadeIn overflow-hidden ${
+                !pub.link ? 'cursor-default' : 'hover:shadow-xl'
               }`}
               style={{ animationDelay: `${index * 30}ms` }}
             >
+              <div className="absolute top-0 left-0 h-full w-0 bg-gray-50 group-hover:w-1 transition-all duration-300"></div>
+
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight mb-2 group-hover:text-gray-700 transition-colors break-words">
-                    {pub.title}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="text-gray-600 font-light text-sm">
+                  <div className="flex items-start gap-2 mb-3">
+                    {pub.type === 'prose' && <FaBook className="text-gray-400 mt-1 flex-shrink-0 w-4 h-4" />}
+                    {pub.type === 'poetry' && <FaPenNib className="text-gray-400 mt-1 flex-shrink-0 w-4 h-4" />}
+                    <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight group-hover:text-gray-700 transition-colors break-words flex-1">
+                      <em>{pub.title}</em>
+                    </h3>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-4 mb-3">
+                    <span className="text-gray-600 font-light text-sm italic">
                       {pub.venue}
                     </span>
-                    <span className="text-gray-500 font-light text-xs">
+                    <span className="inline-block px-2 py-1 bg-gray-100 text-gray-700 text-xs font-light rounded">
                       {pub.year}
                     </span>
                   </div>
                   {pub.notes && (
-                    <p className="text-gray-500 font-light text-sm italic">
-                      {pub.notes}
+                    <p className="text-gray-500 font-light text-sm leading-relaxed">
+                      ✓ {pub.notes}
                     </p>
                   )}
                 </div>
                 {pub.link && (
-                  <div className="flex-shrink-0 text-gray-400 group-hover:text-gray-900 transition-colors pt-1">
+                  <div className="flex-shrink-0 text-gray-400 group-hover:text-gray-900 group-hover:scale-110 transition-all duration-300 pt-1">
                     <FaExternalLinkAlt className="w-4 h-4" />
                   </div>
                 )}
