@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaExternalLinkAlt, FaBook, FaPenNib, FaChevronDown } from 'react-icons/fa';
 
 interface Publication {
@@ -295,11 +295,10 @@ export default function PublicationsSection() {
         <div className="flex justify-center gap-4 mb-12">
           <button
             onClick={() => setActiveTab('prose')}
-            className={`flex items-center gap-2 px-8 py-3 rounded-lg font-light tracking-wide transition-all duration-300 ${
-              activeTab === 'prose'
+            className={`flex items-center gap-2 px-8 py-3 rounded-lg font-light tracking-wide transition-all duration-300 ${activeTab === 'prose'
                 ? 'bg-gray-900 text-white shadow-lg'
                 : 'bg-white text-gray-900 border border-gray-300 hover:border-gray-900'
-            }`}
+              }`}
           >
             <FaBook className="w-4 h-4" />
             <span>Prose</span>
@@ -307,11 +306,10 @@ export default function PublicationsSection() {
           </button>
           <button
             onClick={() => setActiveTab('poetry')}
-            className={`flex items-center gap-2 px-8 py-3 rounded-lg font-light tracking-wide transition-all duration-300 ${
-              activeTab === 'poetry'
+            className={`flex items-center gap-2 px-8 py-3 rounded-lg font-light tracking-wide transition-all duration-300 ${activeTab === 'poetry'
                 ? 'bg-gray-900 text-white shadow-lg'
                 : 'bg-white text-gray-900 border border-gray-300 hover:border-gray-900'
-            }`}
+              }`}
           >
             <FaPenNib className="w-4 h-4" />
             <span>Poetry</span>
@@ -327,9 +325,8 @@ export default function PublicationsSection() {
               href={pub.link || '#'}
               target={pub.link ? '_blank' : undefined}
               rel={pub.link ? 'noopener noreferrer' : undefined}
-              className={`group block relative p-6 bg-white rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 animate-fadeIn overflow-hidden ${
-                !pub.link ? 'cursor-default' : 'hover:shadow-xl'
-              }`}
+              className={`group block relative p-6 bg-white rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 animate-fadeIn overflow-hidden ${!pub.link ? 'cursor-default' : 'hover:shadow-xl'
+                }`}
               style={{ animationDelay: `${index * 30}ms` }}
             >
               <div className="absolute top-0 left-0 h-full w-0 bg-gray-50 group-hover:w-1 transition-all duration-300"></div>
@@ -376,9 +373,8 @@ export default function PublicationsSection() {
             >
               <span>{isExpanded ? 'Show Less' : 'See More'}</span>
               <FaChevronDown
-                className={`w-4 h-4 transition-transform duration-300 ${
-                  isExpanded ? 'rotate-180' : ''
-                }`}
+                className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''
+                  }`}
               />
             </button>
           </div>
