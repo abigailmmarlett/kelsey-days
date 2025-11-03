@@ -49,7 +49,7 @@ export default function TourDatesSection() {
   return (
     <section
       id="tour-dates"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">

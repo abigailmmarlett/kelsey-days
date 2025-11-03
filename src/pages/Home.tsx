@@ -3,6 +3,7 @@ import RecognitionSection from '../components/RecognitionSection';
 import PublicationsSection from '../components/PublicationsSection';
 import BooksSection from '../components/BooksSection';
 import TourDatesSection from '../components/TourDatesSection';
+import ImageShowcaseSection from '../components/ImageShowcaseSection';
 import NewsletterSection from '../components/NewsletterSection';
 import Footer from '../components/Footer';
 import blueridgeMountains from '../assets/mountains.webp';
@@ -30,6 +31,7 @@ export default function Home() {
       />
       <BooksSection />
       <PublicationsSection />
+      <ImageShowcaseSection />
       <RecognitionSection />
       <TourDatesSection />
       <NewsletterSection />

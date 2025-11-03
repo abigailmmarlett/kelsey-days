@@ -340,7 +340,7 @@ export default function PublicationsSection() {
                     {pub.type === 'prose' && <FaBook className="text-gray-400 mt-1 flex-shrink-0 w-4 h-4" />}
                     {pub.type === 'poetry' && <FaPenNib className="text-gray-400 mt-1 flex-shrink-0 w-4 h-4" />}
                     <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight group-hover:text-gray-700 transition-colors break-words flex-1">
-                      {pub.title}
+                      <em>{pub.title}</em>
                     </h3>
                   </div>
                   <div className="flex flex-wrap items-center gap-4 mb-3">

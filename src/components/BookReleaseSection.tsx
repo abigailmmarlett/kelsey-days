@@ -44,7 +44,7 @@ export default function BookReleaseSection({ bookData }: BookReleaseSectionProps
           {/* Book Details */}
           <div className="animate-slideInRight space-y-8">
             <h3 className="text-4xl font-light text-gray-900 leading-tight tracking-tight">
-              {bookData.title}
+              <em>{bookData.title}</em>
             </h3>
 
             {/* Quote */}

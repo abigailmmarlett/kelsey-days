@@ -107,7 +107,7 @@ export default function BooksSection() {
                     {newRelease.status}
                   </span>
                   <h3 className="text-4xl sm:text-5xl font-light text-gray-900 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    {newRelease.title}
+                    <em>{newRelease.title}</em>
                   </h3>
                 </div>
 
@@ -176,7 +176,7 @@ export default function BooksSection() {
                   {/* Book Details */}
                   <div className="flex flex-col flex-1 p-6 md:p-8">
                     <h4 className="text-2xl font-light text-gray-900 mb-2 group-hover:text-gray-700 transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
-                      {book.title}
+                      <em>{book.title}</em>
                     </h4>
 
                     {/* Publication Info */}
