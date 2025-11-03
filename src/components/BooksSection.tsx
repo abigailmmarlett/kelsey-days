@@ -82,21 +82,10 @@ export default function BooksSection() {
         {/* Featured New Release */}
         <div className="mb-20 animate-slideInUp">
           <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 md:p-12">
-              {/* Book Cover */}
-              <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-                <div className="relative w-full max-w-sm">
-                  <div className="absolute -inset-4 bg-gray-200 rounded-lg opacity-20 blur-xl"></div>
-                  <img
-                    src={newRelease.image}
-                    alt={newRelease.title}
-                    className="relative w-full h-auto rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
-                  />
-                </div>
-              </div>
-
-              {/* Book Details */}
-              <div className="order-1 lg:order-2 space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-8 md:p-12">
+              {/* Left Column - Title, Metadata, Quote, Description, Button */}
+              <div className="flex flex-col space-y-6 order-1 lg:order-2">
+                {/* Title and Status */}
                 <div>
                   <span className="inline-block px-4 py-1 bg-gray-900 text-white text-xs font-light uppercase tracking-widest rounded-sm mb-4">
                     {newRelease.status}
@@ -117,6 +106,18 @@ export default function BooksSection() {
                   )}
                 </div>
 
+                {/* Mobile Image - appears before quote on mobile, hidden on desktop */}
+                <div className="flex justify-center lg:hidden">
+                  <div className="relative w-full max-w-sm">
+                    <div className="absolute -inset-4 bg-gray-200 rounded-lg opacity-20 blur-xl"></div>
+                    <img
+                      src={newRelease.image}
+                      alt={newRelease.title}
+                      className="relative w-full h-auto rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                    />
+                  </div>
+                </div>
+
                 {/* Quote */}
                 {newRelease.quote && (
                   <blockquote className="border-l-2 border-gray-900 pl-6 py-4 italic text-gray-700 leading-relaxed">
@@ -134,6 +135,18 @@ export default function BooksSection() {
                   <button className="px-8 py-3 bg-gray-900 text-white rounded-sm hover:bg-gray-800 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-xl hover:-translate-y-0.5">
                     Pre-order Now
                   </button>
+                </div>
+              </div>
+
+              {/* Right Column - Image (hidden on mobile, shown on desktop on left) */}
+              <div className="hidden lg:flex justify-start order-2 lg:order-1">
+                <div className="relative w-full max-w-sm lg:max-w-2xl">
+                  <div className="absolute -inset-4 bg-gray-200 rounded-lg opacity-20 blur-xl"></div>
+                  <img
+                    src={newRelease.image}
+                    alt={newRelease.title}
+                    className="relative w-full h-auto rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                  />
                 </div>
               </div>
             </div>
