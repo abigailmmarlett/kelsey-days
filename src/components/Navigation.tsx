@@ -9,6 +9,8 @@ export default function Navigation() {
       links: [
         { label: 'Home', href: '#home' },
         { label: 'Books', href: '#books' },
+        { label: 'Publications', href: '#publications' },
+        { label: 'Awards', href: '#recognition' },
       ],
     },
     {
@@ -26,7 +28,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-white sticky top-0 z-50 border-b border-gray-200">
+    <nav className="bg-white sticky top-0 z-50 border-b-2 border-forest-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-16 relative">
           {/* Logo */}
@@ -48,10 +50,10 @@ export default function Navigation() {
                     <div key={link.label} className="flex items-center gap-0">
                       <a
                         href={link.href}
-                        className="px-6 py-2 text-gray-700 hover:text-gray-900 transition-colors font-light text-sm tracking-wide group whitespace-nowrap"
+                        className="px-6 py-2 text-gray-700 hover:text-forest-700 transition-colors font-light text-sm tracking-wide group whitespace-nowrap"
                       >
                         {link.label}
-                        <span className="block h-0.5 bg-gray-900 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span className="block h-0.5 bg-forest-700 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                       </a>
                       {currentLinkIdx !== allNavLinks.length - 1 && (
                         <div className="w-px h-4 bg-gray-300"></div>
@@ -98,7 +100,7 @@ export default function Navigation() {
                       key={link.label}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="block px-2 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded transition-colors font-light"
+                      className="block px-2 py-2 text-gray-700 hover:text-forest-700 hover:bg-forest-50 rounded transition-colors font-light"
                     >
                       {link.label}
                     </a>
