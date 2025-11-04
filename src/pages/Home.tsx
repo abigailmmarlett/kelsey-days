@@ -7,8 +7,6 @@ import ImageShowcaseSection from '../components/ImageShowcaseSection';
 import ContactSection from '../components/ContactSection';
 import NewsletterSection from '../components/NewsletterSection';
 import Footer from '../components/Footer';
-import blueridgeMountains from '../assets/mountains.webp';
-import kelseyHeadshot from '../assets/kelsey-headshot.png';
 import HeroSection from '../components/HeroSection';
 
 export default function Home() {
@@ -27,8 +25,8 @@ export default function Home() {
     <div className="bg-neutral-light">
       <HeroSection
         scrollY={scrollY}
-        backgroundImage={blueridgeMountains}
-        headshot={kelseyHeadshot}
+        backgroundImage="/mountains.webp"
+        headshot="/kelsey-headshot.png"
       />
       <BooksSection />
       <PublicationsSection />

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import { SiSubstack } from 'react-icons/si';
-import kelseyFlowers from '../assets/kelsey-flowers.jpg';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -118,7 +117,7 @@ export default function ContactSection() {
             {/* Featured Image - Mobile only, appears after representatives */}
             <div className="animate-slideInRight lg:hidden">
               <img
-                src={kelseyFlowers}
+                src="/kelsey-flowers.JPG"
                 alt="Kelsey Day"
                 className="w-full h-auto object-cover rounded-lg shadow-lg"
               />
@@ -203,7 +202,7 @@ export default function ContactSection() {
             {/* Featured Image */}
             <div className="animate-slideInRight">
               <img
-                src={kelseyFlowers}
+                src="/kelsey-flowers.JPG"
                 alt="Kelsey Day"
                 className="w-full h-auto object-cover rounded-lg shadow-lg"
               />
