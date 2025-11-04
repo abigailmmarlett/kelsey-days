@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import kelseyMic from '../assets/kelsey-mic.jpg';
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState('');
@@ -56,7 +55,7 @@ export default function NewsletterSection() {
       id="newsletter"
       className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
       style={{
-        backgroundImage: `url(${kelseyMic})`,
+        backgroundImage: `url('/kelsey-mic.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center 50%',
         backgroundAttachment: 'fixed',

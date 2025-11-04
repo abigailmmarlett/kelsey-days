@@ -1,7 +1,4 @@
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import spiralKeyImage from '../assets/the-spiral-key.png';
-import rootlinesImage from '../assets/rootlines.png';
-import lastFourImage from '../assets/last-four.jpg';
 
 interface Book {
   title: string;
@@ -26,7 +23,7 @@ const books: Book[] = [
     publisher: 'Viking, Penguin Random House',
     description:
       'For fans of Holly Jackson and Jessica Goodman, this high-stakes thriller is set in a virtual-reality paradise turned hellscape. At the start of each school year, Madison Pembroke sends out invitations to her epic birthday party in the form of custom forged spiral keys. As Madison\'s hated ex-BFF, Bree Benson never receives a key—until this year. But as the party games begin to turn provocative and violent, Bree finds that Ametrine might not be the virtual paradise she was promised.',
-    image: spiralKeyImage,
+    image: '/the-spiral-key.png', // Updated path
     quote: '"The Spiral Key held me utterly captive. An edge-of-your-seat thriller about friendship and ex-friendship, love, loss, and longing, and the need to belong that is as honest and relatable as it is spine-tingling. Don\'t miss this one." — Jennifer Niven, #1 NY Times bestselling author of All the Bright Places',
     links: [],
   },
@@ -37,7 +34,7 @@ const books: Book[] = [
     status: 'Available',
     description:
       'Kelsey Day\'s sophomore poetry book, rootlines, is a visceral collection about hope during the apocalypse. It blurs the lines between the human and non-human world, paying testimony to the Appalachian mountains that have long been abused by the fossil fuel industry. A collection about place, risk, and grief – about the roots we grow from and the branches we reach with.',
-    image: rootlinesImage,
+    image: '/rootlines.png', // Updated path
     links: [
       {
         label: 'Buy on Amazon',
@@ -52,7 +49,7 @@ const books: Book[] = [
     status: 'Available',
     description:
       'Kelsey Day\'s debut poetry book is a chronicle of four transformative years. A vivid song to self, this collection of lethal moments is accompanied by the quirky illustrations of Lily Young-Fritchie. Four chapters: growing backwards [poems of unwellness], him [poems of love], me [poems of discovery], growing forwards [poems of healing].',
-    image: lastFourImage,
+    image: '/last-four.jpg', // Updated path
     links: [
       {
         label: 'Buy on Amazon',

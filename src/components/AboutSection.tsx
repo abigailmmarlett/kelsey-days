@@ -1,5 +1,3 @@
-import kelsey from '../assets/kelsey-headshot.png';
-
 export default function AboutSection() {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
@@ -28,9 +26,16 @@ export default function AboutSection() {
               {/* Image container */}
               <div className="relative rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 bg-white p-1">
                 <img
-                  src={kelsey}
+                  src="/kelsey-flowers.jpg"
                   alt="Kelsey Day"
                   className="w-full h-auto object-cover rounded-lg"
+                  onError={(e) => {
+                    console.error('Image failed to load:', e);
+                    console.log('Current image path:', window.location.origin + '/kelsey-flowers.jpg');
+                  }}
+                  onLoad={() => {
+                    console.log('Image loaded successfully');
+                  }}
                 />
                 {/* Subtle border */}
                 <div className="absolute inset-0 rounded-lg border border-gray-200 pointer-events-none"></div>
