@@ -279,64 +279,70 @@ export default function PublicationsSection() {
   const poetryCount = publications.filter((pub) => pub.type === 'poetry').length;
 
   return (
-    <section id="publications" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4 tracking-tight">
+    <section id="publications" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20 animate-fadeIn">
+          <h2 className="text-5xl sm:text-6xl font-black font-light uppercase tracking-tighter text-gray-900 mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Publications
           </h2>
-          <div className="h-1 w-12 bg-gradient-to-r from-emerald-600 to-emerald-400 mx-auto"></div>
-          <p className="text-gray-600 font-light text-lg mt-6">
+          <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#8FB9CB' }}></div>
+          <p className="text-gray-600 font-light text-lg">
             Featured in prestigious literary journals and anthologies
           </p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex justify-center gap-4 mb-16">
           <button
             onClick={() => setActiveTab('prose')}
-            className={`flex items-center gap-2 px-8 py-3 rounded-lg font-light tracking-wide transition-all duration-300 ${activeTab === 'prose'
-                ? 'bg-gray-900 text-white shadow-lg'
-                : 'bg-white text-gray-900 border border-gray-300 hover:border-gray-900'
+            className={`flex items-center gap-2 px-8 py-4 font-semibold tracking-wide transition-all duration-300 rounded-none text-base ${activeTab === 'prose'
+                ? 'bg-white text-white border-2 border-accent-teal shadow-lg'
+                : 'bg-gray-100 text-gray-900 border-2 border-gray-300 hover:bg-white hover:border-accent-teal/70'
               }`}
+            style={{
+              backgroundColor: activeTab === 'prose' ? '#8FB9CB' : undefined,
+            }}
           >
-            <FaBook className="w-4 h-4" />
+            <FaBook className="w-5 h-5" />
             <span>Prose</span>
-            <span className="text-sm opacity-75">({proseCount})</span>
+            <span className="text-sm font-normal">({proseCount})</span>
           </button>
           <button
             onClick={() => setActiveTab('poetry')}
-            className={`flex items-center gap-2 px-8 py-3 rounded-lg font-light tracking-wide transition-all duration-300 ${activeTab === 'poetry'
-                ? 'bg-gray-900 text-white shadow-lg'
-                : 'bg-white text-gray-900 border border-gray-300 hover:border-gray-900'
+            className={`flex items-center gap-2 px-8 py-4 font-semibold tracking-wide transition-all duration-300 rounded-none text-base ${activeTab === 'poetry'
+                ? 'bg-white text-white border-2 border-accent-teal shadow-lg'
+                : 'bg-gray-100 text-gray-900 border-2 border-gray-300 hover:bg-white hover:border-accent-teal/70'
               }`}
+            style={{
+              backgroundColor: activeTab === 'poetry' ? '#8FB9CB' : undefined,
+            }}
           >
-            <FaPenNib className="w-4 h-4" />
+            <FaPenNib className="w-5 h-5" />
             <span>Poetry</span>
-            <span className="text-sm opacity-75">({poetryCount})</span>
+            <span className="text-sm font-normal">({poetryCount})</span>
           </button>
         </div>
 
         {/* Publications List */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-4 mb-12">
           {visiblePublications.map((pub, index) => (
             <a
               key={index}
               href={pub.link || '#'}
               target={pub.link ? '_blank' : undefined}
               rel={pub.link ? 'noopener noreferrer' : undefined}
-              className={`group block relative p-6 bg-white rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 animate-fadeIn overflow-hidden ${!pub.link ? 'cursor-default' : 'hover:shadow-xl'
+              className={`group block relative p-6 bg-white border border-gray-200 hover:border-accent-teal transition-all duration-300 animate-fadeIn overflow-hidden ${!pub.link ? 'cursor-default' : 'hover:shadow-lg'
                 }`}
               style={{ animationDelay: `${index * 30}ms` }}
             >
-              <div className="absolute top-0 left-0 h-full w-0 bg-gray-50 group-hover:w-1 transition-all duration-300"></div>
+              <div className="absolute top-0 left-0 h-full w-0.5 bg-accent-teal group-hover:w-1 transition-all duration-300"></div>
 
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start gap-2 mb-3">
-                    {pub.type === 'prose' && <FaBook className="text-gray-400 mt-1 flex-shrink-0 w-4 h-4" />}
-                    {pub.type === 'poetry' && <FaPenNib className="text-gray-400 mt-1 flex-shrink-0 w-4 h-4" />}
-                    <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight group-hover:text-gray-700 transition-colors break-words flex-1">
+                    {pub.type === 'prose' && <FaBook className="text-accent-teal mt-1 flex-shrink-0 w-4 h-4" />}
+                    {pub.type === 'poetry' && <FaPenNib className="text-accent-red mt-1 flex-shrink-0 w-4 h-4" />}
+                    <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight group-hover:text-accent-teal transition-colors break-words flex-1">
                       <em>{pub.title}</em>
                     </h3>
                   </div>
@@ -344,7 +350,7 @@ export default function PublicationsSection() {
                     <span className="text-gray-600 font-light text-sm italic">
                       {pub.venue}
                     </span>
-                    <span className="inline-block px-2 py-1 bg-gray-100 text-gray-700 text-xs font-light rounded">
+                    <span className="inline-block px-2 py-1 bg-gray-100 text-gray-600 text-xs font-light rounded-none border border-gray-300">
                       {pub.year}
                     </span>
                   </div>
@@ -355,7 +361,7 @@ export default function PublicationsSection() {
                   )}
                 </div>
                 {pub.link && (
-                  <div className="flex-shrink-0 text-gray-400 group-hover:text-gray-900 group-hover:scale-110 transition-all duration-300 pt-1">
+                  <div className="flex-shrink-0 text-accent-teal group-hover:text-accent-teal/80 group-hover:scale-110 transition-all duration-300 pt-1">
                     <FaExternalLinkAlt className="w-4 h-4" />
                   </div>
                 )}
@@ -366,15 +372,20 @@ export default function PublicationsSection() {
 
         {/* See More Button */}
         {filteredPublications.length > INITIAL_VISIBLE && (
-          <div className="flex justify-center pt-8">
+          <div className="flex justify-center pt-12">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="flex items-center gap-2 px-8 py-3 text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 hover:border-gray-900 transition-all duration-300 font-light tracking-wide group"
+              className="flex items-center gap-3 px-10 py-4 rounded-none hover:opacity-90 transition-all duration-300 font-semibold tracking-wide text-base"
+              style={{
+                backgroundColor: '#8FB9CB',
+                color: 'white',
+                border: '2px solid #8FB9CB',
+                boxShadow: '0 4px 12px rgba(143, 185, 203, 0.3)',
+              }}
             >
               <span>{isExpanded ? 'Show Less' : 'See More'}</span>
               <FaChevronDown
-                className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''
-                  }`}
+                className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
               />
             </button>
           </div>

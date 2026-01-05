@@ -24,7 +24,7 @@ const books: Book[] = [
     description:
       'For fans of Holly Jackson and Jessica Goodman, this high-stakes thriller is set in a virtual-reality paradise turned hellscape. At the start of each school year, Madison Pembroke sends out invitations to her epic birthday party in the form of custom forged spiral keys. As Madison\'s hated ex-BFF, Bree Benson never receives a key—until this year. But as the party games begin to turn provocative and violent, Bree finds that Ametrine might not be the virtual paradise she was promised.',
     image: '/the-spiral-key.png', // Updated path
-    quote: '"The Spiral Key held me utterly captive. An edge-of-your-seat thriller about friendship and ex-friendship, love, loss, and longing, and the need to belong that is as honest and relatable as it is spine-tingling. Don\'t miss this one." — Jennifer Niven, #1 NY Times bestselling author of All the Bright Places',
+    quote: 'For fans of Holly Jackson and Jessica Goodman, this high-stakes thriller is set in a virtual-reality paradise turned hellscape. At the start of each school year, Madison Pembroke sends out invitations to her epic birthday party in the form of custom forged spiral keys. As Madison\'s hated ex-BFF, Bree Benson never receives a key—until this year. But as the party games begin to turn provocative and violent, Bree finds that Ametrine might not be the virtual paradise she was promised.',
     links: [],
   },
   {
@@ -64,86 +64,123 @@ export default function BooksSection() {
   const otherBooks = books.slice(1);
 
   return (
-    <section id="books" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4 tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Books
+    <section id="books" className="py-32 px-4 sm:px-6 lg:px-8 bg-white relative">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20 animate-fadeIn">
+          <h2 className="text-5xl sm:text-6xl font-black font-light uppercase tracking-tighter text-gray-900 mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+            Works
           </h2>
-          <div className="h-1 w-12 bg-gray-400 mx-auto"></div>
-          <p className="text-gray-600 font-light text-lg mt-6">
-            Poetry, prose, and stories
+          <div className="flex justify-center gap-2 mb-6">
+            <div className="h-1 w-20" style={{ backgroundColor: '#d63447' }}></div>
+            <div className="h-1 w-8" style={{ backgroundColor: '#8FB9CB' }}></div>
+          </div>
+          <p className="text-gray-600 font-light text-lg">
+            Poetry, prose, and the thriller that changes everything
           </p>
         </div>
 
-        {/* Featured New Release */}
-        <div className="mb-20 animate-slideInUp">
-          <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-8 md:p-12">
-              {/* Left Column - Title, Metadata, Quote, Description, Button */}
-              <div className="flex flex-col space-y-6 order-1 lg:order-2">
-                {/* Title and Status */}
-                <div>
-                  <span className="inline-block px-4 py-1 bg-gray-900 text-white text-xs font-light uppercase tracking-widest rounded-sm mb-4">
+        {/* Featured New Release - The Spiral Key */}
+        <div className="mb-32 animate-slideInUp">
+          <div className="bg-white border border-gray-200 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-accent-red/50">
+            <div className="p-8 md:p-16">
+              {/* Mobile Layout: Title and Image side-by-side */}
+              <div className="books-mobile-layout flex gap-4 mb-8 items-start">
+                {/* Title Section - left side */}
+                <div className="flex-1 min-w-0">
+                  <span className="inline-block px-4 py-1 bg-accent-red/10 text-accent-red text-xs font-light uppercase tracking-widest rounded-none mb-4 border border-accent-red/30">
                     {newRelease.status}
                   </span>
-                  <h3 className="text-4xl sm:text-5xl font-light text-gray-900 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    <em>{newRelease.title}</em>
+                  <h3 className="text-2xl sm:text-3xl font-black font-light uppercase tracking-tighter text-gray-900 leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+                    {newRelease.title}
                   </h3>
                 </div>
 
-                {/* Publication Info */}
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="text-gray-600 font-light">{newRelease.year}</span>
-                  {newRelease.publisher && (
-                    <>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-gray-600 font-light text-xs uppercase tracking-widest">{newRelease.publisher}</span>
-                    </>
-                  )}
+                {/* Book Cover Image - right side */}
+                <div style={{ width: '140px', flexShrink: 0 }}>
+                  <img
+                    src={newRelease.image}
+                    alt={newRelease.title}
+                    style={{ width: '100%', height: 'auto', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', border: '1px solid #e5e7eb' }}
+                  />
                 </div>
+              </div>
 
-                {/* Mobile Image - appears before quote on mobile, hidden on desktop */}
-                <div className="flex justify-center lg:hidden">
-                  <div className="relative w-full max-w-sm">
-                    <div className="absolute -inset-4 bg-gray-200 rounded-lg opacity-20 blur-xl"></div>
-                    <img
-                      src={newRelease.image}
-                      alt={newRelease.title}
-                      className="relative w-full h-auto rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
-                    />
-                  </div>
-                </div>
-
-                {/* Quote */}
-                {newRelease.quote && (
-                  <blockquote className="border-l-2 border-gray-900 pl-6 py-4 italic text-gray-700 leading-relaxed">
-                    {newRelease.quote}
-                  </blockquote>
+              {/* Mobile Publication Info */}
+              <div className="books-mobile-layout flex items-center gap-3 text-sm mb-8">
+                <span className="text-gray-600 font-light">{newRelease.year}</span>
+                {newRelease.publisher && (
+                  <>
+                    <span className="text-gray-300">•</span>
+                    <span className="text-gray-600 font-light text-xs uppercase tracking-widest">{newRelease.publisher}</span>
+                  </>
                 )}
+              </div>
 
-                {/* Description */}
+              {/* Mobile: Description and Button */}
+              <div className="books-mobile-layout flex flex-col space-y-8">
                 <p className="text-gray-700 leading-relaxed font-light text-lg" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   {newRelease.description}
                 </p>
 
-                {/* Action Button */}
                 <div className="pt-6 border-t border-gray-200">
-                  <button className="px-8 py-3 bg-gray-900 text-white rounded-sm hover:bg-gray-800 transition-all duration-300 font-light tracking-widest uppercase text-sm hover:shadow-xl hover:-translate-y-0.5">
-                    Pre-order Now
+                  <button className="px-8 py-4 bg-accent-red text-white font-light tracking-widest uppercase text-sm hover:bg-accent-red/90 transition-all duration-300 hover:shadow-2xl hover:shadow-accent-red/50 hover:-translate-y-1 group relative overflow-hidden">
+                    <span className="relative z-10">Pre-order Now</span>
+                    <div className="absolute inset-0 bg-accent-red/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                   </button>
                 </div>
               </div>
 
-              {/* Right Column - Image (hidden on mobile, shown on desktop on left) */}
-              <div className="hidden lg:flex justify-start order-2 lg:order-1">
-                <div className="relative w-full max-w-sm lg:max-w-2xl">
-                  <div className="absolute -inset-4 bg-gray-200 rounded-lg opacity-20 blur-xl"></div>
-                  <img
-                    src={newRelease.image}
-                    alt={newRelease.title}
-                    className="relative w-full h-auto rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
-                  />
+              {/* Desktop Layout: Grid with image left, content right */}
+              <div className="books-desktop-layout grid grid-cols-2 gap-16 items-start">
+                {/* Desktop: Image on the left */}
+                <div className="flex justify-start">
+                  <div className="relative w-full max-w-sm">
+                    <div className="absolute -inset-6 bg-gradient-to-br from-accent-red/20 via-accent-gold/10 to-transparent rounded-none blur-3xl"></div>
+                    <div className="relative hover:scale-105 transition-transform duration-500 hover:-rotate-1">
+                      <div className="absolute -inset-2 bg-black/50 blur-2xl"></div>
+                      <img
+                        src={newRelease.image}
+                        alt={newRelease.title}
+                        className="relative w-full h-auto shadow-2xl hover:shadow-3xl transition-all duration-500"
+                      />
+                      <div className="absolute inset-0 grain-overlay pointer-events-none opacity-50"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop: Title, Metadata, Description and Button on the right */}
+                <div className="flex flex-col space-y-8">
+                  <div>
+                    <span className="inline-block px-4 py-1 bg-accent-red/10 text-accent-red text-xs font-light uppercase tracking-widest rounded-none mb-6 border border-accent-red/30">
+                      {newRelease.status}
+                    </span>
+                    <h3 className="text-6xl sm:text-7xl font-black font-light uppercase tracking-tighter text-gray-900 leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+                      {newRelease.title}
+                    </h3>
+                  </div>
+
+                  {/* Publication Info */}
+                  <div className="flex items-center gap-3 text-sm">
+                    <span className="text-gray-600 font-light">{newRelease.year}</span>
+                    {newRelease.publisher && (
+                      <>
+                        <span className="text-gray-300">•</span>
+                        <span className="text-gray-600 font-light text-xs uppercase tracking-widest">{newRelease.publisher}</span>
+                      </>
+                    )}
+                  </div>
+
+                  <p className="text-gray-700 leading-relaxed font-light text-lg" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                    {newRelease.description}
+                  </p>
+
+                  {/* Action Button */}
+                  <div className="pt-6 border-t border-gray-200">
+                    <button className="px-8 py-4 bg-accent-red text-white font-light tracking-widest uppercase text-sm hover:bg-accent-red/90 transition-all duration-300 hover:shadow-2xl hover:shadow-accent-red/50 hover:-translate-y-1 group relative overflow-hidden">
+                      <span className="relative z-10">Pre-order Now</span>
+                      <div className="absolute inset-0 bg-accent-red/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -152,16 +189,17 @@ export default function BooksSection() {
 
         {/* Other Books Grid */}
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h3 className="text-3xl font-black font-light uppercase tracking-tighter text-gray-900 mb-12 text-center" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Poetry & More</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {otherBooks.map((book, index) => (
               <div
                 key={index}
                 className="group animate-floatIn"
                 style={{ animationDelay: `${(index + 1) * 100}ms` }}
               >
-                <div className="relative h-full flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                <div className="relative h-full flex flex-col bg-white border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl hover:border-accent-red/30 transition-all duration-500 hover:scale-105">
                   {/* Book Cover Image */}
-                  <div className="relative w-full h-80 overflow-hidden bg-gray-100">
+                  <div className="relative w-full h-96 overflow-hidden bg-gray-100">
                     <img
                       src={book.image}
                       alt={book.title}
@@ -171,7 +209,7 @@ export default function BooksSection() {
                     {/* Status Badge */}
                     {book.status && (
                       <div className="absolute top-4 right-4">
-                        <span className="inline-block px-3 py-1 bg-gray-900 text-white text-xs font-light uppercase tracking-widest rounded-sm">
+                        <span className="inline-block px-3 py-1 bg-accent-red/10 text-accent-red text-xs font-light uppercase tracking-widest rounded-none border border-accent-red/30">
                           {book.status}
                         </span>
                       </div>
@@ -179,17 +217,17 @@ export default function BooksSection() {
                   </div>
 
                   {/* Book Details */}
-                  <div className="flex flex-col flex-1 p-6 md:p-8">
-                    <h4 className="text-2xl font-light text-gray-900 mb-2 group-hover:text-gray-700 transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  <div className="flex flex-col flex-1 p-8">
+                    <h4 className="text-3xl font-light text-gray-900 mb-4 group-hover:text-accent-red transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
                       <em>{book.title}</em>
                     </h4>
 
                     {/* Publication Info */}
-                    <div className="flex items-center gap-3 mb-6 text-sm">
+                    <div className="flex items-center gap-3 mb-8 text-sm">
                       <span className="text-gray-600 font-light">{book.year}</span>
                       {book.price && (
                         <>
-                          <span className="text-gray-400">•</span>
+                          <span className="text-gray-300">•</span>
                           <span className="text-gray-600 font-light">{book.price}</span>
                         </>
                       )}
@@ -201,19 +239,19 @@ export default function BooksSection() {
                     </p>
 
                     {/* Action Buttons and Links */}
-                    <div className="pt-6 border-t border-gray-200 space-y-2">
+                    <div className="pt-8 border-t border-gray-200 space-y-3">
                       {book.links.length > 0 && (
-                        <div className="space-y-2">
+                        <div className="space-y-3">
                           {book.links.map((link, linkIndex) => (
                             <a
                               key={linkIndex}
                               href={link.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-gray-900 hover:text-gray-700 transition-colors font-light text-sm group/link"
+                              className="inline-flex items-center gap-2 text-accent-red hover:text-accent-red/80 transition-colors font-light text-sm group/link"
                             >
                               <span>{link.label}</span>
-                              <FaExternalLinkAlt className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                              <FaExternalLinkAlt className="w-3 h-3 opacity-60 group-hover/link:opacity-100 transition-opacity" />
                             </a>
                           ))}
                         </div>

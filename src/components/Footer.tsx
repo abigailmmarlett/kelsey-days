@@ -3,19 +3,20 @@ import { SiSubstack } from 'react-icons/si';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-24 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-gray-400 py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
       <div className="max-w-6xl mx-auto">
         {/* Navigation Sections */}
         <div className="grid grid-cols-3 gap-6 sm:gap-12 mb-16 pb-12 border-b border-gray-800">
           <div className="text-center">
-            <h3 className="text-white font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6">
+            <h3 className="text-white font-black font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
               Work
             </h3>
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <a
                   href="#books"
-                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                  className="font-light text-xs sm:text-sm transition-colors"
+                  style={{ color: '#8FB9CB' }}
                 >
                   Books
                 </a>
@@ -23,7 +24,8 @@ export default function Footer() {
               <li>
                 <a
                   href="#publications"
-                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                  className="font-light text-xs sm:text-sm transition-colors"
+                  style={{ color: '#8FB9CB' }}
                 >
                   Publications
                 </a>
@@ -32,31 +34,33 @@ export default function Footer() {
           </div>
 
           <div className="text-center">
-            <h3 className="text-white font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6">
+            <h3 className="text-white font-black font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
               Explore
             </h3>
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <a
-                  href="#tour-dates"
-                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                  href="#spiral-key"
+                  className="font-light text-xs sm:text-sm transition-colors"
+                  style={{ color: '#8FB9CB' }}
                 >
-                  Tour Dates
+                  The Spiral Key
                 </a>
               </li>
               <li>
                 <a
-                  href="#newsletter"
-                  className="text-gray-400 hover:text-gray-200 transition-colors font-light text-xs sm:text-sm"
+                  href="#contact"
+                  className="font-light text-xs sm:text-sm transition-colors"
+                  style={{ color: '#8FB9CB' }}
                 >
-                  Newsletter
+                  Contact
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="text-center">
-            <h3 className="text-white font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6">
+            <h3 className="text-white font-black font-light text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
               Follow
             </h3>
             <div className="space-y-2 sm:space-y-3 flex flex-col items-center">
@@ -64,7 +68,8 @@ export default function Footer() {
                 href="https://kelseydays.substack.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-200 transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                className="transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                style={{ color: '#8FB9CB' }}
                 title="Substack Newsletter"
               >
                 <SiSubstack className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -74,7 +79,8 @@ export default function Footer() {
                 href="https://www.instagram.com/kelseydays"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-200 transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                className="transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                style={{ color: '#8FB9CB' }}
                 title="Instagram"
               >
                 <FaInstagram className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -84,7 +90,8 @@ export default function Footer() {
                 href="https://facebook.com/kelseydaywriting"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-200 transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                className="transition-colors group flex items-center gap-2 font-light text-xs sm:text-sm"
+                style={{ color: '#8FB9CB' }}
                 title="Facebook"
               >
                 <FaFacebook className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -96,7 +103,11 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="flex flex-col items-center justify-center gap-6">
-          <p className="text-gray-500 font-light text-xs">
+          <div className="flex gap-2">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+            <div className="h-px w-8" style={{ backgroundImage: 'linear-gradient(to right, transparent, rgba(143, 185, 203, 0.5), transparent)' }}></div>
+          </div>
+          <p className="text-gray-600 font-light text-xs">
             © {new Date().getFullYear()} Kelsey Day. All rights reserved.
           </p>
         </div>
