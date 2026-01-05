@@ -91,38 +91,39 @@ export default function RecognitionSection() {
   const visibleAwards = isExpanded ? awards : awards.slice(0, INITIAL_VISIBLE);
 
   return (
-    <section id="recognition" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-3xl sm:text-4xl font-light text-gray-900 mb-4 tracking-tight">
+    <section id="recognition" className="py-32 px-4 sm:px-6 lg:px-8 bg-white relative">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20 animate-fadeIn">
+          <h2 className="text-5xl sm:text-6xl font-black font-light uppercase tracking-tighter text-gray-900 mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             Awards & Recognition
           </h2>
-          <div className="h-1 w-12 bg-gradient-to-r from-rose-600 to-rose-400 mx-auto"></div>
-          <p className="text-gray-600 font-light text-lg mt-6">
+          <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#8FB9CB' }}></div>
+          <p className="text-gray-600 font-light text-lg">
             Celebrating artistic achievement and literary impact
           </p>
         </div>
 
         {/* Awards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {visibleAwards.map((award, index) => (
             <div
               key={index}
-              className="group relative p-8 bg-white rounded-lg border border-gray-200 hover:border-gray-900 hover:shadow-xl transition-all duration-300 animate-floatIn overflow-hidden"
+              className="group relative p-8 bg-gray-50 border border-gray-200 hover:border-accent-teal hover:shadow-lg transition-all duration-300 animate-floatIn overflow-hidden"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-b from-gray-900/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-0 left-0 h-0.5 w-0 bg-accent-teal group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-b from-accent-teal/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
               <div className="flex items-start gap-4 relative z-10">
-                <div className="flex-shrink-0 text-gray-400 group-hover:text-gray-900 group-hover:scale-125 transition-all duration-300">
+                <div className="flex-shrink-0 opacity-80 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300" style={{ fontSize: '1.25rem', color: '#8FB9CB' }}>
                   {award.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight mb-3 group-hover:text-gray-700 transition-colors">
+                  <h3 className="text-lg font-light text-gray-900 leading-tight tracking-tight mb-3 group-hover:opacity-75 transition-opacity">
                     {award.title}
                   </h3>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-light uppercase tracking-widest rounded-full group-hover:bg-gray-900 group-hover:text-white transition-all duration-300">
+                    <span className="inline-block px-3 py-1 bg-gray-300 text-gray-900 text-xs font-semibold uppercase tracking-widest rounded-none border transition-all duration-300" style={{ borderColor: '#8FB9CB', borderWidth: '1px' }}>
                       {award.category}
                     </span>
                   </div>
@@ -142,7 +143,8 @@ export default function RecognitionSection() {
           <div className="flex justify-center pt-8">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="flex items-center gap-2 px-8 py-3 text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 hover:border-gray-900 transition-all duration-300 font-light tracking-wide group"
+              className="flex items-center gap-2 px-8 py-3 border rounded-none hover:bg-opacity-10 transition-all duration-300 font-light tracking-wide group"
+              style={{ color: '#8FB9CB', borderColor: 'rgba(143, 185, 203, 0.5)' }}
             >
               <span>{isExpanded ? 'Show Less' : 'See More'}</span>
               <FaChevronDown

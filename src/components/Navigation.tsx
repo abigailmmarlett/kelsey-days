@@ -8,15 +8,9 @@ export default function Navigation() {
       title: 'Explore',
       links: [
         { label: 'Home', href: '#home' },
+        { label: 'The Spiral Key', href: '#spiral-key' },
         { label: 'Books', href: '#books' },
         { label: 'Publications', href: '#publications' },
-        { label: 'Awards', href: '#recognition' },
-      ],
-    },
-    {
-      title: 'Events',
-      links: [
-        { label: 'Tour Dates', href: '#tour-dates' },
       ],
     },
     {
@@ -28,12 +22,12 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-white sticky top-0 z-50 border-b-2 border-forest-200">
+    <nav className="bg-charcoal-950 sticky top-0 z-50 border-b border-charcoal-800 grain-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-16 relative">
           {/* Logo */}
           <div className="absolute left-0 flex-shrink-0">
-            <a href="#home" className="text-xl font-light text-gray-900 tracking-tight">
+            <a href="#home" className="text-sm font-black font-light uppercase tracking-widest text-white hover:text-accent-gold transition-colors duration-300" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
               Kelsey Day
             </a>
           </div>
@@ -50,13 +44,13 @@ export default function Navigation() {
                     <div key={link.label} className="flex items-center gap-0">
                       <a
                         href={link.href}
-                        className="px-6 py-2 text-gray-700 hover:text-forest-700 transition-colors font-light text-sm tracking-wide group whitespace-nowrap"
+                        className="px-6 py-2 text-gray-300 hover:text-accent-gold transition-colors font-light text-xs tracking-widest uppercase group whitespace-nowrap"
                       >
                         {link.label}
-                        <span className="block h-0.5 bg-forest-700 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span className="block h-0.5 bg-accent-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                       </a>
                       {currentLinkIdx !== allNavLinks.length - 1 && (
-                        <div className="w-px h-4 bg-gray-300"></div>
+                        <div className="w-px h-4 bg-charcoal-700"></div>
                       )}
                     </div>
                   );
@@ -68,7 +62,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="absolute right-0 md:hidden inline-flex items-center justify-center p-2 rounded text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            className="absolute right-0 md:hidden inline-flex items-center justify-center p-2 rounded text-gray-300 hover:text-accent-gold hover:bg-charcoal-900 transition-colors"
           >
             <svg
               className="h-6 w-6"
@@ -88,19 +82,19 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4">
+          <div className="md:hidden pb-4 border-t border-charcoal-800">
             {navSections.map((section) => (
               <div key={section.title} className="px-3 py-4">
-                <p className="text-xs uppercase text-gray-500 font-light tracking-widest mb-2">
+                <p className="text-xs uppercase text-charcoal-500 font-light tracking-widest mb-3">
                   {section.title}
                 </p>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   {section.links.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="block px-2 py-2 text-gray-700 hover:text-forest-700 hover:bg-forest-50 rounded transition-colors font-light"
+                      className="block px-2 py-2 text-gray-300 hover:text-accent-gold hover:bg-charcoal-900 rounded-none transition-colors font-light text-sm"
                     >
                       {link.label}
                     </a>
