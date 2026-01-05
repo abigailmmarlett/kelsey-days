@@ -22,7 +22,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-charcoal-950 sticky top-0 z-50 border-b border-charcoal-800 grain-overlay">
+    <nav className="bg-charcoal-950 sticky top-0 z-50 border-b border-charcoal-800 backdrop-blur-md" style={{ backgroundColor: 'rgba(26, 26, 26, 0.95)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-16 relative">
           {/* Logo */}

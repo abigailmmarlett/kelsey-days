@@ -1,4 +1,3 @@
-
 export default function NewsletterSection() {
 
   return (
@@ -8,8 +7,8 @@ export default function NewsletterSection() {
       style={{
         backgroundImage: `url('/kelsey-mic.jpg')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center 50%',
-        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center 40%',
+        backgroundAttachment: 'scroll',
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/25 to-black/30 backdrop-blur-sm"></div>

@@ -109,8 +109,8 @@ export default function SpiralKeyHero() {
           </div>
         </div>
 
-        {/* Bottom accent elements */}
-        <div className="absolute bottom-20 left-0 right-0 flex justify-center">
+        {/* Bottom accent elements - hidden on mobile */}
+        <div className="absolute bottom-20 left-0 right-0 flex justify-center hidden lg:flex">
           <div className="text-center space-y-3 animate-bounce" style={{ animationDuration: '3s' }}>
             <p className="text-xs tracking-widest uppercase text-charcoal-500">Scroll to explore</p>
             <svg className="w-5 h-5 mx-auto text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
