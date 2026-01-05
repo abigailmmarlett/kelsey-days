@@ -27,9 +27,34 @@ export default function SpiralKeyHero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Text Content */}
+          {/* Left: Book Cover */}
           <div
-            className={`space-y-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            className={`flex justify-center lg:justify-start transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+              }`}
+          >
+            <div className="relative w-full max-w-sm sm:max-w-lg lg:max-w-2xl">
+              {/* Dramatic shadow/glow behind book */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-accent-red/20 via-accent-gold/10 to-transparent rounded-none blur-3xl"></div>
+              <div className="absolute -inset-6 bg-gradient-to-tl from-transparent via-accent-teal/5 to-transparent rounded-none blur-2xl"></div>
+
+              {/* Book cover with rotation and shadow */}
+              <div className="relative transform hover:scale-105 transition-transform duration-500 hover:-rotate-1">
+                <div className="absolute -inset-2 bg-black/50 blur-2xl"></div>
+                <img
+                  src="/spiral-key-cover.jpeg"
+                  alt="The Spiral Key Book Cover"
+                  className="relative w-full h-auto shadow-2xl hover:shadow-3xl transition-all duration-500"
+                />
+
+                {/* Subtle grain overlay on cover */}
+                <div className="absolute inset-0 grain-overlay pointer-events-none opacity-50"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Text Content */}
+          <div
+            className={`space-y-8 transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
               }`}
           >
             {/* Decorative accent line */}
@@ -81,41 +106,6 @@ export default function SpiralKeyHero() {
                 Get in Touch
               </a>
             </div>
-          </div>
-
-          {/* Right: Book Cover */}
-          <div
-            className={`flex justify-center lg:justify-end transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
-              }`}
-          >
-            <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md">
-              {/* Dramatic shadow/glow behind book */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-accent-red/20 via-accent-gold/10 to-transparent rounded-none blur-3xl"></div>
-              <div className="absolute -inset-6 bg-gradient-to-tl from-transparent via-accent-teal/5 to-transparent rounded-none blur-2xl"></div>
-
-              {/* Book cover with rotation and shadow */}
-              <div className="relative transform hover:scale-105 transition-transform duration-500 hover:-rotate-1">
-                <div className="absolute -inset-2 bg-black/50 blur-2xl"></div>
-                <img
-                  src="/the-spiral-key.png"
-                  alt="The Spiral Key Book Cover"
-                  className="relative w-full h-auto shadow-2xl hover:shadow-3xl transition-all duration-500"
-                />
-
-                {/* Subtle grain overlay on cover */}
-                <div className="absolute inset-0 grain-overlay pointer-events-none opacity-50"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom accent elements - hidden on mobile */}
-        <div className="absolute bottom-20 left-0 right-0 flex justify-center hidden lg:flex">
-          <div className="text-center space-y-3 animate-bounce" style={{ animationDuration: '3s' }}>
-            <p className="text-xs tracking-widest uppercase text-charcoal-500">Scroll to explore</p>
-            <svg className="w-5 h-5 mx-auto text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
           </div>
         </div>
       </div>
